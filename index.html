@@ -3,145 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>JEC Distribuidora</title>
-  <meta name="description" content="Mayorista y minorista de pinturas y productos para el hogar y la construcción. Envíos en GBA y al resto del país."/>
+  <title>JEC Distribuidora | Pinturas y Construcción</title>
+  <meta name="description" content="Mayorista y minorista de pinturas y productos para el hogar y la construcción. Envíos en GBA y al resto del país por expreso."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- Header moderno -->
   <header class="topbar">
     <div class="container topbar__inner">
-      <div class="brand">
-        <div class="brand__logo">JEC</div>
-        <div class="brand__text">
-          <strong>JEC DISTRIBUIDORA</strong>
-          <span>Lo bueno siempre llega</span>
-        </div>
-      </div>
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand__img" src="assets/jec-logo.png" alt="JEC Distribuidora" />
+      </a>
 
-      <nav class="nav">
+      <nav class="nav" id="nav">
         <a href="#productos">Productos</a>
+        <a href="#marcas">Marcas</a>
         <a href="#envios">Envíos</a>
-        <a href="#contacto" class="btn btn--sm">Contactar</a>
+        <a href="#contacto">Contacto</a>
       </nav>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" id="priceBtnTop" href="#" target="_blank" rel="noopener">Lista de precios</a>
+        <a class="btn" id="btnWhatsAppTop" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <!-- Menú mobile -->
+    <div class="mobileNav" id="mobileNav">
+      <a href="#productos">Productos</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#envios">Envíos</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn--ghost" id="priceBtnMobile" href="#" target="_blank" rel="noopener">Lista de precios</a>
+      <a class="btn" id="btnWhatsAppMobile" href="#" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
 
-  <main>
+  <!-- Botón flotante WhatsApp -->
+  <a id="waFloat" class="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    WhatsApp
+  </a>
+
+  <main id="inicio">
+    <!-- Hero moderno -->
     <section class="hero">
       <div class="container hero__grid">
-        <div>
-          <h1>Pinturas y productos para construcción<br/>Mayorista y minorista</h1>
+        <div class="hero__copy">
+          <div class="badge">Mayorista y Minorista • GBA e Interior</div>
+          <h1>Pinturas y construcción<br/>con entrega rápida</h1>
           <p>
-            Atendemos ferreterías, pinturerías, corralones, constructoras y consumidor final.
-            Entregas en <strong>GBA</strong> con vehículo propio y al resto del país por expreso.
+            Atendemos <strong>ferreterías</strong>, <strong>pinturerías</strong>, <strong>corralones</strong>, constructoras y consumidor final.
+            Pedí lista de precios y armamos tu pedido por WhatsApp.
           </p>
 
           <div class="cta">
-            <a class="btn" id="btnWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" id="btnWhatsApp" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
             <a class="btn btn--ghost" href="#productos">Ver categorías</a>
           </div>
 
-          <div class="chips">
-            <span>✅ Stock</span>
-            <span>✅ Factura</span>
-            <span>✅ Envíos</span>
-            <span>✅ Asesoramiento</span>
-          </div>
-        </div>
-
-        <div class="card hero__card">
-          <h3>Lista de precios</h3>
-          <p>Escaneá el QR o ingresá al link para ver la lista actualizada.</p>
-
-          <div class="qrBox">
-            <div class="qrFake">QR</div>
-            <div class="qrText">
-              <label for="priceLink">Pegá tu link acá:</label>
-              <input id="priceLink" type="url" placeholder="https://..." />
-              <button class="btn btn--sm" id="saveLink">Guardar</button>
+          <div class="stats">
+            <div class="stat">
+              <strong>GBA</strong>
+              <span>vehículo propio</span>
+            </div>
+            <div class="stat">
+              <strong>Interior</strong>
+              <span>por expreso</span>
+            </div>
+            <div class="stat">
+              <strong>Atención</strong>
+              <span>rápida y directa</span>
             </div>
           </div>
+        </div>
 
-          <small class="muted">
-            Tip: después te lo reemplazo por un QR real con tu link.
-          </small>
+        <div class="hero__card">
+          <div class="card">
+            <h3>Acceso rápido</h3>
+            <p class="muted">Links para que el cliente compre sin vueltas.</p>
+
+            <div class="quickLinks">
+              <a class="quick" id="priceBtn" href="#" target="_blank" rel="noopener">
+                <span class="quick__title">Lista de precios</span>
+                <span class="quick__desc">Actualizada</span>
+              </a>
+              <a class="quick" href="#productos">
+                <span class="quick__title">Catálogo</span>
+                <span class="quick__desc">Por categorías</span>
+              </a>
+              <a class="quick" href="#envios">
+                <span class="quick__title">Envíos</span>
+                <span class="quick__desc">GBA + Interior</span>
+              </a>
+            </div>
+
+            <div class="divider"></div>
+
+            <small class="muted">
+              Tip: si querés, te lo dejo con <strong>QR</strong> para imprimir y que te escaneen la lista de precios.
+            </small>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Productos -->
     <section id="productos" class="section">
       <div class="container">
-        <h2>Categorías principales</h2>
-        <p class="muted">Armado “divino por categoría” para que el cliente entienda rápido.</p>
+        <div class="sectionHead">
+          <div>
+            <h2>Productos</h2>
+            <p class="muted">Ordenado para vender rápido: lo que el ferretero pide siempre.</p>
+          </div>
+          <div class="searchBox">
+            <input id="search" type="text" placeholder="Buscar (ej: membrana, látex, sintético)..." />
+          </div>
+        </div>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Látex</h3>
-            <p>Interior / exterior, alto rendimiento y gran cobertura.</p>
+        <div id="productGrid" class="grid">
+          <article class="card product" data-tags="latex interior exterior pintura">
+            <div class="productTop">
+              <span class="tag">Pinturas</span>
+              <h3>Látex</h3>
+            </div>
+            <p>Interior / exterior, alto rendimiento, gran cobertura.</p>
+            <ul>
+              <li>Blanco y colores</li>
+              <li>Para obra y mantenimiento</li>
+            </ul>
           </article>
 
-          <article class="card">
-            <h3>Sintéticos</h3>
-            <p>Triple acción, esmaltes, antióxido, acabados durables.</p>
+          <article class="card product" data-tags="sintetico esmalte antioxido triple accion">
+            <div class="productTop">
+              <span class="tag">Pinturas</span>
+              <h3>Sintéticos / Esmaltes</h3>
+            </div>
+            <p>Durabilidad, terminación y protección.</p>
+            <ul>
+              <li>Triple acción</li>
+              <li>Antióxido / acabados</li>
+            </ul>
           </article>
 
-          <article class="card">
-            <h3>Hidroesmaltes</h3>
+          <article class="card product" data-tags="hidroesmalte base agua bajo olor">
+            <div class="productTop">
+              <span class="tag">Pinturas</span>
+              <h3>Hidroesmaltes</h3>
+            </div>
             <p>Base agua, bajo olor, excelente terminación.</p>
+            <ul>
+              <li>Interior / exterior</li>
+              <li>Fácil aplicación</li>
+            </ul>
           </article>
 
-          <article class="card">
-            <h3>Membranas</h3>
-            <p>Impermeabilización y protección de techos y superficies.</p>
+          <article class="card product" data-tags="membrana impermeabilizante techos">
+            <div class="productTop">
+              <span class="tag">Impermeabilización</span>
+              <h3>Membranas</h3>
+            </div>
+            <p>Impermeabilización para techos y superficies.</p>
+            <ul>
+              <li>Membrana líquida</li>
+              <li>Protección UV</li>
+            </ul>
           </article>
 
-          <article class="card">
-            <h3>Adhesivos y pastinas</h3>
-            <p>Pastinas, ligantes, hidrófugos y complementos.</p>
+          <article class="card product" data-tags="hidrofugo ligante pastina el hornero">
+            <div class="productTop">
+              <span class="tag">Obra</span>
+              <h3>Hidrófugos / Ligantes / Pastinas</h3>
+            </div>
+            <p>Complementos para obra, terminación y sellado.</p>
+            <ul>
+              <li>Pastinas por color</li>
+              <li>Aditivos y selladores</li>
+            </ul>
           </article>
 
-          <article class="card">
-            <h3>Aerosoles</h3>
-            <p>Colores y usos varios para retoques y terminaciones.</p>
+          <article class="card product" data-tags="aerosol aerosol pintura prospray">
+            <div class="productTop">
+              <span class="tag">Terminación</span>
+              <h3>Aerosoles</h3>
+            </div>
+            <p>Retoques, terminaciones y usos generales.</p>
+            <ul>
+              <li>Varios colores</li>
+              <li>Secado rápido</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="envios" class="section section--alt">
+    <!-- Marcas -->
+    <section id="marcas" class="section section--alt">
+      <div class="container">
+        <h2>Marcas</h2>
+        <p class="muted">Líneas que se mueven fuerte en ferretería y pinturería.</p>
+
+        <div class="brandRow">
+          <div class="pill">SIKCEL</div>
+          <div class="pill">ANDINA</div>
+          <div class="pill">EL HORNERO</div>
+          <div class="pill">PROSPRAY</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Envíos -->
+    <section id="envios" class="section">
       <div class="container">
         <h2>Envíos</h2>
         <div class="twoCol">
           <div class="card">
-            <h3>GBA (con vehículo propio)</h3>
+            <h3>GBA con vehículo propio</h3>
             <p>Coordinamos por WhatsApp y te lo llevamos al comercio.</p>
           </div>
           <div class="card">
-            <h3>Interior del país (por expreso)</h3>
+            <h3>Interior por expreso</h3>
             <p>Despachamos y te pasamos el seguimiento.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto" class="section">
       <div class="container">
         <h2>Contacto</h2>
         <div class="twoCol">
           <div class="card">
             <h3>WhatsApp directo</h3>
-            <p>Te respondemos rápido y armamos tu pedido.</p>
+            <p class="muted">Decime qué necesitás y te cotizo al toque.</p>
             <a class="btn" id="btnWhatsApp2" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
           </div>
 
           <div class="card">
-            <h3>Datos</h3>
+            <h3>Redes y ubicación</h3>
             <p class="muted">
               📍 Rafael Castillo / González Catán / Pontevedra<br/>
-              🌐 www.jecdistribuidora.com<br/>
-              📲 Instagram: @distribuidorajec
+              🌐 <span>www.jecdistribuidora.com</span><br/>
+              📲 <a id="igLink" href="#" target="_blank" rel="noopener">@distribuidorajec</a><br/>
+              🗺️ <a id="mapsLink" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
             </p>
-            <small class="muted">Si me pasás tu número de WhatsApp y tu link de lista de precios, lo dejo 100% final.</small>
           </div>
         </div>
       </div>
@@ -156,8 +266,12 @@
   </main>
 
   <script>
-    // 1) Configurá tu WhatsApp acá
+    // ✅ EDITÁ ESTO (sí o sí)
     const WHATSAPP_NUMBER = "54911XXXXXXXX"; // ej: 54911 + numero sin 0 ni 15
+    const PRICE_LIST_URL = "https://...";     // tu Google Drive / Sheets / Dropbox
+    const INSTAGRAM_URL = "https://www.instagram.com/distribuidorajec/";
+    const MAPS_URL = "https://www.google.com/maps"; // pegá tu ubicación real
+
     const DEFAULT_MSG = "Hola! Soy de (ferretería/pinturería). Quería lista de precios y condiciones mayoristas.";
 
     function waLink() {
@@ -165,30 +279,41 @@
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${txt}`;
     }
 
-    function setWhatsAppLinks() {
-      const a1 = document.getElementById("btnWhatsApp");
-      const a2 = document.getElementById("btnWhatsApp2");
-      const link = waLink();
-      a1.href = link;
-      a2.href = link;
+    function setLinks(){
+      const wa = waLink();
+
+      ["btnWhatsApp","btnWhatsApp2","btnWhatsAppTop","btnWhatsAppMobile","waFloat"]
+        .forEach(id => { const el = document.getElementById(id); if(el) el.href = wa; });
+
+      ["priceBtn","priceBtnTop","priceBtnMobile"]
+        .forEach(id => { const el = document.getElementById(id); if(el) el.href = PRICE_LIST_URL; });
+
+      document.getElementById("igLink").href = INSTAGRAM_URL;
+      document.getElementById("mapsLink").href = MAPS_URL;
+      document.getElementById("year").textContent = new Date().getFullYear();
     }
 
-    // 2) Guardar link de lista de precios (solo en el navegador)
-    const priceLinkInput = document.getElementById("priceLink");
-    const saveBtn = document.getElementById("saveLink");
-
-    const saved = localStorage.getItem("jec_price_link");
-    if (saved) priceLinkInput.value = saved;
-
-    saveBtn.addEventListener("click", () => {
-      const v = priceLinkInput.value.trim();
-      if (!v) return alert("Pegá un link válido.");
-      localStorage.setItem("jec_price_link", v);
-      alert("Listo. Después te armo el QR real con ese link.");
+    // búsqueda simple en categorías
+    const search = document.getElementById("search");
+    const cards = [...document.querySelectorAll(".product")];
+    search?.addEventListener("input", () => {
+      const q = (search.value || "").toLowerCase().trim();
+      cards.forEach(c => {
+        const t = (c.getAttribute("data-tags") || "").toLowerCase();
+        c.style.display = (!q || t.includes(q)) ? "" : "none";
+      });
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-    setWhatsAppLinks();
+    // menú mobile
+    const burger = document.getElementById("burger");
+    const mobileNav = document.getElementById("mobileNav");
+    burger?.addEventListener("click", () => {
+      const open = mobileNav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", ()=> mobileNav.classList.remove("open")));
+
+    setLinks();
   </script>
 </body>
 </html>
