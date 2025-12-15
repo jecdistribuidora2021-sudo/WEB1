@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>JEC Distribuidora</title>
+  <meta name="description" content="Mayorista y minorista de pinturas y productos para el hogar y la construcción. Envíos en GBA y al resto del país."/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__logo">JEC</div>
+        <div class="brand__text">
+          <strong>JEC DISTRIBUIDORA</strong>
+          <span>Lo bueno siempre llega</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#productos">Productos</a>
+        <a href="#envios">Envíos</a>
+        <a href="#contacto" class="btn btn--sm">Contactar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <h1>Pinturas y productos para construcción<br/>Mayorista y minorista</h1>
+          <p>
+            Atendemos ferreterías, pinturerías, corralones, constructoras y consumidor final.
+            Entregas en <strong>GBA</strong> con vehículo propio y al resto del país por expreso.
+          </p>
+
+          <div class="cta">
+            <a class="btn" id="btnWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--ghost" href="#productos">Ver categorías</a>
+          </div>
+
+          <div class="chips">
+            <span>✅ Stock</span>
+            <span>✅ Factura</span>
+            <span>✅ Envíos</span>
+            <span>✅ Asesoramiento</span>
+          </div>
+        </div>
+
+        <div class="card hero__card">
+          <h3>Lista de precios</h3>
+          <p>Escaneá el QR o ingresá al link para ver la lista actualizada.</p>
+
+          <div class="qrBox">
+            <div class="qrFake">QR</div>
+            <div class="qrText">
+              <label for="priceLink">Pegá tu link acá:</label>
+              <input id="priceLink" type="url" placeholder="https://..." />
+              <button class="btn btn--sm" id="saveLink">Guardar</button>
+            </div>
+          </div>
+
+          <small class="muted">
+            Tip: después te lo reemplazo por un QR real con tu link.
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="section">
+      <div class="container">
+        <h2>Categorías principales</h2>
+        <p class="muted">Armado “divino por categoría” para que el cliente entienda rápido.</p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Látex</h3>
+            <p>Interior / exterior, alto rendimiento y gran cobertura.</p>
+          </article>
+
+          <article class="card">
+            <h3>Sintéticos</h3>
+            <p>Triple acción, esmaltes, antióxido, acabados durables.</p>
+          </article>
+
+          <article class="card">
+            <h3>Hidroesmaltes</h3>
+            <p>Base agua, bajo olor, excelente terminación.</p>
+          </article>
+
+          <article class="card">
+            <h3>Membranas</h3>
+            <p>Impermeabilización y protección de techos y superficies.</p>
+          </article>
+
+          <article class="card">
+            <h3>Adhesivos y pastinas</h3>
+            <p>Pastinas, ligantes, hidrófugos y complementos.</p>
+          </article>
+
+          <article class="card">
+            <h3>Aerosoles</h3>
+            <p>Colores y usos varios para retoques y terminaciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="envios" class="section section--alt">
+      <div class="container">
+        <h2>Envíos</h2>
+        <div class="twoCol">
+          <div class="card">
+            <h3>GBA (con vehículo propio)</h3>
+            <p>Coordinamos por WhatsApp y te lo llevamos al comercio.</p>
+          </div>
+          <div class="card">
+            <h3>Interior del país (por expreso)</h3>
+            <p>Despachamos y te pasamos el seguimiento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <div class="twoCol">
+          <div class="card">
+            <h3>WhatsApp directo</h3>
+            <p>Te respondemos rápido y armamos tu pedido.</p>
+            <a class="btn" id="btnWhatsApp2" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </div>
+
+          <div class="card">
+            <h3>Datos</h3>
+            <p class="muted">
+              📍 Rafael Castillo / González Catán / Pontevedra<br/>
+              🌐 www.jecdistribuidora.com<br/>
+              📲 Instagram: @distribuidorajec
+            </p>
+            <small class="muted">Si me pasás tu número de WhatsApp y tu link de lista de precios, lo dejo 100% final.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© <span id="year"></span> JEC Distribuidora</span>
+        <span class="muted">Hecho para cargar rápido en celular</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // 1) Configurá tu WhatsApp acá
+    const WHATSAPP_NUMBER = "54911XXXXXXXX"; // ej: 54911 + numero sin 0 ni 15
+    const DEFAULT_MSG = "Hola! Soy de (ferretería/pinturería). Quería lista de precios y condiciones mayoristas.";
+
+    function waLink() {
+      const txt = encodeURIComponent(DEFAULT_MSG);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${txt}`;
+    }
+
+    function setWhatsAppLinks() {
+      const a1 = document.getElementById("btnWhatsApp");
+      const a2 = document.getElementById("btnWhatsApp2");
+      const link = waLink();
+      a1.href = link;
+      a2.href = link;
+    }
+
+    // 2) Guardar link de lista de precios (solo en el navegador)
+    const priceLinkInput = document.getElementById("priceLink");
+    const saveBtn = document.getElementById("saveLink");
+
+    const saved = localStorage.getItem("jec_price_link");
+    if (saved) priceLinkInput.value = saved;
+
+    saveBtn.addEventListener("click", () => {
+      const v = priceLinkInput.value.trim();
+      if (!v) return alert("Pegá un link válido.");
+      localStorage.setItem("jec_price_link", v);
+      alert("Listo. Después te armo el QR real con ese link.");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setWhatsAppLinks();
+  </script>
+</body>
+</html>
